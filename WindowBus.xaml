@@ -1,0 +1,36 @@
+﻿<Window x:Class="AkademiadotNET.WindowBus"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AkademiadotNET"
+        mc:Ignorable="d"
+        Title="WindowBus" Height="436.673" Width="880.5" >
+    <Grid Margin="0,0,-8,0">
+        <TextBox x:Name="textBoxBrand" HorizontalAlignment="Left" Height="23" Margin="664,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162"/>
+        <TextBox x:Name="textBoxModel" HorizontalAlignment="Left" Height="23" Margin="664,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162"/>
+        <TextBox x:Name="textBoxRegistractionNumber" HorizontalAlignment="Left" Height="23" Margin="664,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162"/>
+        <Button x:Name="buttonBusAdd" Content="Wystaw" HorizontalAlignment="Left" Margin="613,266,0,0" VerticalAlignment="Top" Width="106" Click="buttonBusAdd_Click" FontFamily="Technic" Height="32"/>
+        <Button x:Name="buttonBusDelete" Content="Kup wybrany" HorizontalAlignment="Left" Margin="324,266,0,0" VerticalAlignment="Top" Width="118" Click="buttonBusDelete_Click" FontFamily="Technic"/>
+        <ListView x:Name="listViewBus" HorizontalAlignment="Left" Height="323" Margin="34,55,0,0" VerticalAlignment="Top" Width="275">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label x:Name="label" Content="Opis..." HorizontalAlignment="Left" Margin="324,55,0,0" VerticalAlignment="Top" Height="154" Width="217" RenderTransformOrigin="0.217,1.355" FontFamily="Technic"/>
+        <Button x:Name="buttonDescription" Content="Odswiez opis" HorizontalAlignment="Left" Margin="324,214,0,0" VerticalAlignment="Top" Width="118" Click="buttonDescription_Click" FontFamily="Technic" FontSize="13.333"/>
+        <Label x:Name="Opis_" Content="Opis:" HorizontalAlignment="Left" Margin="324,31,0,0" VerticalAlignment="Top" FontFamily="Technic"/>
+        <Label x:Name="label1" Content="Wystaw na sprzedaz:" HorizontalAlignment="Left" Margin="546,31,0,0" VerticalAlignment="Top" FontFamily="Technic"/>
+        <Label x:Name="label2" Content="Marka:" HorizontalAlignment="Left" Margin="546,84,0,0" VerticalAlignment="Top" FontFamily="Technic"/>
+        <Label x:Name="label3" Content="Model:" HorizontalAlignment="Left" Margin="546,112,0,0" VerticalAlignment="Top" FontFamily="Technic"/>
+        <Label x:Name="label4" Content="Nr rejestracyjny:" HorizontalAlignment="Left" Margin="546,140,0,0" VerticalAlignment="Top" FontFamily="Technic"/>
+        <Label x:Name="label5" Content="Rok produkcji: " HorizontalAlignment="Left" Margin="546,175,0,0" VerticalAlignment="Top" FontFamily="Technic"/>
+        <Label x:Name="label6" Content="Liczba siedzen:" HorizontalAlignment="Left" Margin="546,210,0,0" VerticalAlignment="Top" FontFamily="Technic"/>
+        <TextBox x:Name="textBoxYearOfProduction" HorizontalAlignment="Left" Height="23" Margin="664,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162"/>
+        <TextBox x:Name="textBoxNumberOfSeats" HorizontalAlignment="Left" Height="23" Margin="662,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
+        <Label x:Name="label7" Content="Baza Autobusow:" HorizontalAlignment="Left" Margin="34,28,0,0" VerticalAlignment="Top" FontFamily="Technic"/>
+
+    </Grid>
+</Window>

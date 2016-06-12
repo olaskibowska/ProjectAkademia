@@ -1,0 +1,14 @@
+﻿<Window x:Class="AkademiadotNET.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AkademiadotNET"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="273.673" Width="621.856">
+    <Grid>
+        <Button x:Name="buttonCar" Content="Samochody" HorizontalAlignment="Left" Margin="105,131,0,0" VerticalAlignment="Top" Width="156" Height="50" Click="buttonCar_Click" FontFamily="Technic" FontSize="15"/>
+        <Button x:Name="buttonBus" Content="Autobusy" HorizontalAlignment="Left" Margin="380,131,0,0" VerticalAlignment="Top" Width="162" Height="50" Click="buttonBus_Click" FontFamily="Technic" FontSize="15"/>
+        <Label x:Name="label" Content="Witamy w Komisie!" HorizontalAlignment="Left" Margin="220,32,0,0" VerticalAlignment="Top" FontFamily="TechnicLite" Height="101" Width="215" FontSize="20"/>
+    </Grid>
+</Window>
