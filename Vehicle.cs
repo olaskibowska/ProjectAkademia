@@ -38,5 +38,13 @@ namespace AkademiadotNET
         {
             return (item.registractionNumber == registractionNumber);
         }
+
+        virtual public string Description()
+        {
+            return "Marka: " + brand +
+                "\n" + "Model: " + model +
+                "\n" + "Nr rejestracyjny: " + registractionNumber +
+                "\n" + "Rok produkcji: " + yearOfProduction;
+        }
     }
 }

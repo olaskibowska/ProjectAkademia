@@ -17,7 +17,7 @@ namespace AkademiadotNET
         {
             numberOfSeats = oNumberOfSeats;
         }
-        public string Description()
+        override public string Description()
         {
             return "Marka: " + brand +
                 "\n" + "Model: " + model +
