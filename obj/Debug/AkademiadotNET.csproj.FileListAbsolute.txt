@@ -16,3 +16,21 @@ c:\users\user\documents\visual studio 2015\Projects\AkademiadotNET\obj\Debug\Win
 c:\users\user\documents\visual studio 2015\Projects\AkademiadotNET\obj\Debug\WindowBus.g.cs
 c:\users\user\documents\visual studio 2015\Projects\AkademiadotNET\obj\Debug\WindowBus.baml
 c:\users\user\documents\visual studio 2015\Projects\AkademiadotNET\obj\Debug\AkademiadotNET.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\bin\Debug\AkademiadotNET.exe.config
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\obj\Debug\AkademiadotNET.exe
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\obj\Debug\AkademiadotNET.pdb
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\bin\Debug\AkademiadotNET.exe
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\bin\Debug\AkademiadotNET.pdb
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\obj\Debug\AkademiadotNET.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\obj\Debug\MainWindow.g.cs
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\obj\Debug\WindowBus.g.cs
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\obj\Debug\WindowCar.g.cs
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\obj\Debug\App.g.cs
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\obj\Debug\AkademiadotNET_MarkupCompile.cache
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\obj\Debug\AkademiadotNET_MarkupCompile.lref
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\obj\Debug\MainWindow.baml
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\obj\Debug\WindowBus.baml
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\obj\Debug\WindowCar.baml
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\obj\Debug\AkademiadotNET.g.resources
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\obj\Debug\AkademiadotNET.Properties.Resources.resources
+C:\Users\USER\Desktop\projekt akademia\ProjectAkademia\obj\Debug\AkademiadotNET.csproj.GenerateResource.Cache

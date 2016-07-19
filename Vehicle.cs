@@ -13,11 +13,6 @@ namespace AkademiadotNET
         public string registractionNumber { get; set; }
         public int yearOfProduction { get; set; }
 
-        public bool Equals(Vehicle item)
-        {
-            return (item.registractionNumber == registractionNumber);
-        }
-
         public Vehicle()
         {
             brand = "default brand";
@@ -37,6 +32,11 @@ namespace AkademiadotNET
         public override string ToString()
         {
             return this.brand + " " + this.model + " ,"+this.yearOfProduction;
+        }
+
+        public bool Equals(Vehicle item)
+        {
+            return (item.registractionNumber == registractionNumber);
         }
     }
 }

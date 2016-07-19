@@ -30,7 +30,6 @@ namespace AkademiadotNET
             Bus bus2 = new Bus("Mercedes", "capture", "wp879865", 1987, 32);
 
             busList.Add(bus2);
-
             listViewBus.ItemsSource = busList;
 
             
@@ -38,13 +37,16 @@ namespace AkademiadotNET
 
         private void buttonBusAdd_Click(object sender, RoutedEventArgs e)
         {
-            if(!String.IsNullOrEmpty(textBoxBrand.Text) || !String.IsNullOrEmpty(textBoxModel.Text) || 
-               !String.IsNullOrEmpty(textBoxRegistractionNumber.Text) || !String.IsNullOrEmpty(textBoxYearOfProduction.Text)
-               || !String.IsNullOrEmpty(textBoxNumberOfSeats.Text))
+            if(!String.IsNullOrEmpty(textBoxBrand.Text) ||
+               !String.IsNullOrEmpty(textBoxModel.Text) || 
+               !String.IsNullOrEmpty(textBoxRegistractionNumber.Text) ||
+               !String.IsNullOrEmpty(textBoxYearOfProduction.Text) || 
+               !String.IsNullOrEmpty(textBoxNumberOfSeats.Text))
             {
                 Bus bus1 = new Bus();
                 bus1.brand = textBoxBrand.Text;
                 bus1.model = textBoxModel.Text;
+
                 try
                 {
                     bus1.yearOfProduction = int.Parse(textBoxYearOfProduction.Text);
@@ -52,9 +54,11 @@ namespace AkademiadotNET
                 catch
                 {
                     MessageBox.Show("Niepoprawny format roku produkcji");
+                    return;
                 }
                 
                 bus1.registractionNumber = textBoxRegistractionNumber.Text;
+
                 try
                 {
                     bus1.numberOfSeats = int.Parse(textBoxNumberOfSeats.Text);
@@ -62,13 +66,30 @@ namespace AkademiadotNET
                 catch
                 {
                     MessageBox.Show("Niepoprawny format liczby siedzen");
+                    return;
                 }
-                
 
-                busList.Add(bus1);
-                listViewBus.ItemsSource = null;
-                listViewBus.ItemsSource = busList;
+                bool registractionNumberExist = false;
+                foreach (Vehicle other in busList)
+                {
+                    if (other.Equals(bus1))
+                    {
+                        registractionNumberExist = true;
+                        break;
+                    }
+                }
 
+                if (!registractionNumberExist)
+                {
+                    busList.Add(bus1);
+                    listViewBus.ItemsSource = null;
+                    listViewBus.ItemsSource = busList;
+                }
+                else
+                {
+                    MessageBox.Show("Autobus o tym numerze rejestracyjnym jest juz zapisany");
+                }
+ 
             }
             else
             {
@@ -97,7 +118,15 @@ namespace AkademiadotNET
         private void buttonDescription_Click(object sender, RoutedEventArgs e)
         {
             int index = listViewBus.SelectedIndex;
-            label.Content = busList[index].Description();
+            try
+            {
+                label.Content = busList[index].Description();
+            }
+            catch
+            {
+                MessageBox.Show("Zaznacz autobus dla którego chcesz odświeżyć opis");
+            }
+            
         }
 
        

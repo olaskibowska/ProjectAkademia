@@ -27,71 +27,67 @@ namespace AkademiadotNET
         {
             InitializeComponent();
             carList = new ObservableCollection<Car>();
-
-            XDocument xml = new XDocument(
-                new XDeclaration("1.0", "utf-8", "yes"),
-                new XComment("Lista samochodów z komisu"),
-                new XElement("Samochody",
-                    from car in carList
-                    orderby car.brand, car.model
-                    select new XElement("samochód",
-                        new XAttribute("Marka", car.brand),
-                        new XElement("Model", car.model),
-                        new XElement("Numer Rejestracyjny", car.registractionNumber),
-                        new XElement("Rok produkcji", car.yearOfProduction),
-                        new XElement("Klimatyzacja", car.airConditioning)
-                        )
-                    )
-            );
-
-            xml.Save("Cars.xml");
             listView.ItemsSource = carList;
         }
 
         private void buttonAdd_Click(object sender, RoutedEventArgs e)
         {
             
-            if ((!String.IsNullOrEmpty(textBoxBrand.Text) || !String.IsNullOrEmpty(textBoxModel.Text) ||
-               !String.IsNullOrEmpty(textBoxRegistractionNumber.Text) || !String.IsNullOrEmpty(textBoxYearOfProduction.Text)) && 
+            if ((!String.IsNullOrEmpty(textBoxBrand.Text) ||
+                 !String.IsNullOrEmpty(textBoxModel.Text) ||
+                 !String.IsNullOrEmpty(textBoxRegistractionNumber.Text) ||
+                 !String.IsNullOrEmpty(textBoxYearOfProduction.Text)) && 
                ((radioButtonNo.IsChecked == false && radioButtonYes.IsChecked == true) || 
-               (radioButtonNo.IsChecked == true && radioButtonYes.IsChecked == false)))
+                (radioButtonNo.IsChecked == true && radioButtonYes.IsChecked == false)))
             {
 
                 Car car1 = new Car();
-                if (Equals(car1))
+                //todo: zapisac warunek
+                
+                car1.brand = textBoxBrand.Text;
+                car1.model = textBoxModel.Text;
+
+                try
                 {
-                    MessageBox.Show("Samochód o takim numerze rejestracyjnym jest już zarejestrowany!");
+                   car1.yearOfProduction = int.Parse(textBoxYearOfProduction.Text);
                 }
-                else
+                catch
                 {
-                    car1.brand = textBoxBrand.Text;
-                    car1.model = textBoxModel.Text;
-                    try
-                    {
-                        car1.yearOfProduction = int.Parse(textBoxYearOfProduction.Text);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Niepoprawny format roku produkcji");
-                    }
+                   MessageBox.Show("Niepoprawny format roku produkcji");
+                   return;
+                }
                     
-                    car1.registractionNumber = textBoxRegistractionNumber.Text;
+                car1.registractionNumber = textBoxRegistractionNumber.Text;
 
-                    if (radioButtonNo.IsChecked == true)
+                if (radioButtonNo.IsChecked == true)
+                {
+                    car1.airConditioning = airConditioningValue.Nie.ToString();
+                }
+                else if (radioButtonYes.IsChecked == true)
+                {
+                    car1.airConditioning = airConditioningValue.Tak.ToString();
+                }
+
+                bool registractionNumberExist = false;
+                foreach (Vehicle other in carList)
+                {
+                    if (other.Equals(car1))
                     {
-                        car1.airConditioning = airConditioningValue.Nie.ToString();
+                        registractionNumberExist = true;
+                        break;
                     }
-                    else if (radioButtonYes.IsChecked == true)
-                    {
-                        car1.airConditioning = airConditioningValue.Tak.ToString();
-                    }
+                }
 
-
+                if(!registractionNumberExist)
+                {
                     carList.Add(car1);
                     listView.ItemsSource = null;
                     listView.ItemsSource = carList;
                 }
-                
+                else
+                {
+                    MessageBox.Show("Samochód o tym numerze rejestracyjnym jest juz zapisany");
+                }
 
             }
             else
@@ -121,7 +117,14 @@ namespace AkademiadotNET
         private void buttonDescription_Click(object sender, RoutedEventArgs e)
         {
             int index = listView.SelectedIndex;
-            label.Content = carList[index].Description();
+            try
+            {
+                label.Content = carList[index].Description();
+            }
+            catch
+            {
+                MessageBox.Show("Zaznacz samochód dla którego chcesz odświeżyć opis");
+            } 
         }
     }
 }
