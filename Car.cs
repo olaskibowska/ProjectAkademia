@@ -9,7 +9,7 @@ namespace AkademiadotNET
     enum airConditioningValue {Tak, Nie}
     class Car : Vehicle
     {
-        public string airConditioning;
+        public string airConditioning { get; set; }
         private bool VintageCar;
 
         public Car()
