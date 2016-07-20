@@ -120,6 +120,7 @@ namespace AkademiadotNET
             try
             {
                 label.Content = carList[index].Description();
+                label10.Content = carList[index].VintageCarDescription();
             }
             catch
             {
